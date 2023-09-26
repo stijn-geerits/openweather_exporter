@@ -1,4 +1,4 @@
-module github.com/billykwooten/openweather-exporter
+module openweather_exporter
 
 go 1.19
 

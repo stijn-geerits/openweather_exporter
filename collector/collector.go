@@ -16,6 +16,7 @@ package collector
 import (
 	"fmt"
 	"net/http"
+	"openweather_exporter/geo"
 	"strings"
 	"time"
 
@@ -26,7 +27,6 @@ import (
 
 	owm "github.com/briandowns/openweathermap"
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/stijn-geerits/openweather_exporter/geo"
 )
 
 // OpenweatherCollector Define a struct for your collector that contains pointers

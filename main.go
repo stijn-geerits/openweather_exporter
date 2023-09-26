@@ -15,6 +15,7 @@ package main
 
 import (
 	"net/http"
+	"openweather_exporter/collector"
 	"os"
 	"strconv"
 	"time"
@@ -24,13 +25,12 @@ import (
 	"github.com/jellydator/ttlcache/v2"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/stijn-geerits/openweather_exporter/collector"
 	"gopkg.in/alecthomas/kingpin.v2"
 )
 
 var (
 	// Default App Flags
-	app         = kingpin.New("openweather-exporter", "Openweather Exporter for Openweather API").Author("Billy Wooten")
+	app         = kingpin.New("openweather-exporter", "Openweather Exporter for Openweather API").Author("Stijn Geerits")
 	addr        = app.Flag("listen-address", "HTTP port to listen on. (Default 9091)").Envar("OW_LISTEN_ADDRESS").Default(":9091").String()
 	apiKey      = app.Flag("apikey", "Openweather API Key").Envar("OW_APIKEY").Required().String()
 	city        = app.Flag("city", "City for Openweather to gather metrics from.").Envar("OW_CITY").Default("New York, NY").String()
